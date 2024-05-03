@@ -1,0 +1,52 @@
+Ominous Forge	[Forge] Upgrade a card in your deck.	[Rummage] Obtain a special Relic. Become Cursed - Pain.	[Leave]
+Pleading Vagrant	[Offer Gold] 85 Gold: Obtain a Relic.	[Rob] Obtain a Relic. Become Cursed - Shame.
+Ancient Writing	[Elegance] Remove a card from your deck.	[Simplicity] Upgrade all Strikes and Defends.
+Old Beggar	[Offer Gold] 75 Gold: Remove a card from your deck.	[Leave]
+Big Fish	[Banana] Heal 33% HP.	[Donut] Max HP +5.	[Box] Obtain a Relic. Become Cursed - Regret.
+Bonfire Spirits	Starter	Common	Uncommon	Rare	Special	Curse
+The Colosseum	[Fight]	[COWARDICE] Escape.	[VICTORY] A powerful fight with many rewards.
+Cursed Tome	[Leave]	[Take] Obtain the Book. Lose 15 HP.	[Stop] Lose 3 HP.
+Dead Adventurer	0 times: [Search] Find Loot.	1 times: [Search] Find Loot.	2 times: [Search] Find Loot.	3 times: [Search] Find Loot.
+Designer In-Spire	[Punch] Lose 5 HP.	[Adjustments] Lose 50 Gold. Upgrade a card.	[Adjustments] Lose 50 Gold. Upgrade 2 random cards.	[Clean Up] Lose 75 Gold. Remove a card.	[Clean Up] Lose 75 Gold. Transform 2 cards.	[Full Service] Lose 110 Gold. Remove a card and upgrade a random card.
+Augmenter	[Test J.A.X.] Get JAXXED.	[Become Test Subject] Transform 2 cards.	[Ingest Mutagens] Obtain a special relic.
+Duplicator	[Pray] Duplicate a card in your deck.	[Leave]
+Face Trader	[Touch] Lose 10% HP, gain 50 Gold.	[Trade] 50%: Good Face. 50%: Bad Face.	[Leave]
+Falling	[Strike] Lose Attack	[Land] Lose Skill	[Channel] Lose Power
+Forgotten Altar	[Offer: Golden Idol] Obtain a special Relic. Lose Golden Idol.	[Sacrifice] Gain 5 Max HP. Lose 33% HP.	[Desecrate] Become Cursed - Decay.
+The Divine Fountain	[Drink] Remove all Curses from your deck.	[Leave]
+Council of Ghosts	[Accept] Receive 3 Apparition. Lose 50% Max HP.	[Refuse]
+Golden Idol	[Hide] Lose 10% Max HP.	[Smash] Take 35% Damage.	[Outrun] Become Cursed - Injury.	[Leave]
+Golden Shrine	[Pray] Gain 50 Gold.	[Desecrate] Gain 275 Gold. Become Cursed - Regret.	[Leave]
+Wing Statue	[Pray] Remove a card from your deck. Lose 7 HP.	[Destroy] Gain 50 - 80 Gold.	[Leave]
+Lab	[Search] Find some Potions!
+The Ssssserpent	[Agree] Gain 150 Gold. Become Cursed - Doubt.	[Disagree]
+Living Wall	[Forget] Remove a card from your deck.	[Change] Transform a card in your deck.	[Grow] Upgrade a card in your deck.
+Masked Bandits	[Pay] Lose ALL of your Gold.	[Fight!]
+Match and Keep!	0 matches	1 matches	2 matches	3 matches	4 matches	5 matches
+Mind Bloom	[I am War] Fight a Boss from Act 1. Obtain a Rare Relic.	[I am Rich] Gain 999 Gold. Cursed - 2 Normality.	[I am Healthy] Heal to full HP. Cursed - Doubt.	[I am Awake] Upgrade all Cards. You can no longer heal.
+Mushrooms	[Stomp] Anger the Mushrooms.	[Eat] Heal 25% HP. Become Cursed - Parasite.
+Mysterious Sphere	[Open Sphere] Fight. Reward: Rare Relic.	[Leave]
+N'loth	[Offer: Relic ] Lose this relic. Obtain a special relic.	[Leave]
+The Nest	[Smash and Grab] Obtain 50 Gold.	[Stay in Line] Obtain Ritual Dagger. Lose 6 HP.
+Purifier	[Pray] Remove a card from your deck.	[Leave]
+Scrap Ooze	[Reach Inside] Lose ? HP. ?%: Find a Relic.	[Leave]
+Secret Portal	[Enter the Portal] IMMEDIATELY travel to the boss.	[Leave]
+Sensory Stone	[Recall] Add 1 Colorless card to your deck.	[Recall] Add 2 Colorless cards to your deck. Lose 5 HP.	[Recall] Add 3 Colorless cards to your deck. Lose 10 HP.
+Shining Light	[Enter] Upgrade 2 random cards. Lose 30% HP.	[Leave]
+The Cleric	[Purify] 75 Gold: Remove a card from your deck.	[Heal] 35 Gold: Heal 25% HP.	[Leave]
+The Joust	[Murderer] Bet 50 Gold - 70%: win 100 Gold.	[Owner] Bet 50 Gold - 30%: win 250 Gold.
+The Library	[Read] Choose 1 of 20 cards to add to your deck.	[Sleep] Heal 20% HP.
+The Mausoleum	[Open Coffin] Obtain a Relic. 100%: Become Cursed - Writhe.	[Leave]
+The Moai Head	[Jump Inside] Heal to full HP. Lose 18% Max HP.	[Offer: Golden Idol] Gain 333 Gold. Lose Golden Idol.	[Leave]
+The Woman in Blue	[Buy 1 Potion]	[Buy 2 Potions]	[Buy 3 Potions]	[Leave]
+Tomb of Lord Red Mask	[Don the Red Mask] Gain 222 Gold.	[Offer: Gold] Lose all Gold. Obtain a Relic.	[Leave]
+Transmogrifier	[Pray] Transform a card.	[Leave]
+Upgrade Shrine	[Pray] Upgrade a card.	[Leave]
+Vampires(?)	[Accept] Remove all Strikes. Receive 5 Bites. Lose 30% Max HP.	[Lose Blood Vial] Remove all Strikes. Receive 5 Bites.	[Refuse]
+We Meet Again!	[Give Potion] Lose	[Give Gold] Lose	[Give Card] Lose	[Attack]
+Wheel of Change	[Prize!] YAY!!!! 100g x Current Act	[Prize!] Obtain a Relic.	[Prize!] Heal to full health.	[Prize?] Curse - Decay.	[Prize!] Remove a card from your deck
+
+.	[Prize?] Lose 15% HP.
+Winding Halls	[Embrace Madness] Receive 2 Madness. Lose 18% HP.	[Focus] Become Cursed - Writhe. Heal 20% HP.	[Retrace Your Steps] Lose 5% Max HP.
+World of Goop	[Gather Gold] Gain 75 Gold. Lose 11 HP.	[Leave It] Lose 35-75 Gold.
+Knowing Skull	[Leave]
