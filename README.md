@@ -1,2 +1,2 @@
-# CS6371.002-Project
+# CS6320.002-Project
 ### WIP
