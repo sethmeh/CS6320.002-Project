@@ -47,4 +47,3 @@ We Meet Again!	[Give Potion] Lose	[Give Gold] Lose	[Give Card] Lose	[Attack]
 Wheel of Change	[Prize!] YAY!!!! 100g x Current Act	[Prize!] Obtain a Relic.	[Prize!] Heal to full health.	[Prize?] Curse - Decay.	[Prize!] Remove a card from your deck.	[Prize?] Lose 15% HP.
 Winding Halls	[Embrace Madness] Receive 2 Madness. Lose 18% HP.	[Focus] Become Cursed - Writhe. Heal 20% HP.	[Retrace Your Steps] Lose 5% Max HP.
 World of Goop	[Gather Gold] Gain 75 Gold. Lose 11 HP.	[Leave It] Lose 35-75 Gold.
-Knowing Skull	[Leave]
