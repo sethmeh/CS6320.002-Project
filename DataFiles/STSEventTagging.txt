@@ -1,4 +1,4 @@
-Event Name  Choice 1  Choice 2  Choice 3  Choice 4  Choice 5  Choice 6
+Event Name	Choice 1	Choice 2	Choice 3	Choice 4	Choice 5	Choice 6
 Ominous Forge	[Forge] Upgrade a card in your deck.	[Rummage] Obtain a special Relic. Become Cursed - Pain.	[Leave]
 Pleading Vagrant	[Offer Gold] 85 Gold: Obtain a Relic.	[Rob] Obtain a Relic. Become Cursed - Shame.
 Ancient Writing	[Elegance] Remove a card from your deck.	[Simplicity] Upgrade all Strikes and Defends.
