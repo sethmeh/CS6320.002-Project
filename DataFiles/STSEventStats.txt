@@ -1,0 +1,50 @@
+Ominous Forge	188	49.5	193	39.9	0	0	
+Pleading Vagrant	315	45.4	48	52.1	
+Ancient Writing	232	51.3	208	45.7	
+Old Beggar	366	47.5	14	42.9	
+Big Fish	533	32.3	57	33.3	
+Bonfire Spirits	269	40.5	29	48.3	59	45.8	43	72.1	30	50	8	25	
+The Colosseum	133	55.6	16	18.8	114	64	
+Cursed Tome	397	50.1	68	29.4	
+Dead Adventurer	87	26.4	58	34.5	31	45.2	
+Designer In-Spire	2	50	10	60	11	9.1	21	57.1	45	57.8	55	69.1	
+Augmenter	379	54.6	44	40.9	
+Duplicator	186	59.1	
+Face Trader	213	44.6	84	19	5	20	
+Falling	331	70.1	148	62.2	67	71.6	
+Forgotten Altar	291	44	70	32.9	
+The Divine Fountain	23	47.8	2	50	
+Council of Ghosts	392	52.8	108	29.6	
+Golden Idol	606	30.9	158	29.7	22	13.6	10	30	
+Golden Shrine	266	39.5	137	49.6	2	0	
+Wing Statue	616	31.3	76	36.8	4	0	
+Lab	319	40.8	
+The Ssssserpent	201	30.8	
+Living Wall	423	30	307	37.5	
+Masked Bandits	396	50.5	
+Match and Keep!	140	42.9	210	47.6	87	54	8	87.5	
+Mind Bloom	501	72.5	70	75.7	7	28.6	3	100	
+Mushrooms	227	29.1	9	33.3	
+Mysterious Sphere	462	75.8	79	44.3	
+N'loth	87	47.1	35	37.1	
+The Nest	348	44.8	97	54.6	
+Purifier	394	45.7	
+Scrap Ooze	587	33.4	129	31.8	
+Secret Portal	88	0	88	64.8	
+Sensory Stone	48	41.7	5	60	492	69.9	
+Shining Light	539	32.5	125	32.8	
+The Cleric	454	26.9	121	34.7	72	34.7	
+The Joust	64	40.6	36	38.9	
+The Library	429	51.7	44	13.6	
+The Mausoleum	99	39.4	331	46.5	
+The Moai Head	64	47.8	27	55.6	
+The Woman in Blue	122	45.9	72	33.3	89	34.8	42	50	
+Tomb of Lord Red Mask	79	75.9	86	47.7	407	71.5	
+Transmogrifier	374	46.3	
+Upgrade Shrine	422	45.3	
+Vampires(?)	72	33.3	15	26.7	376	44.9	
+We Meet Again!	166	46.4	128	38.3	81	46.9	13	46.2	
+Wheel of Change	69	46.4	64	42.2	80	45	73	34.2	66	43.9	
+Winding Halls	130	61.5	25	52	400	69.3	
+World of Goop	598	32.9	93	17.2	
+Knowing Skull	28	46.4	10	20	4	25	1	0	2	50	15	33.3	3	100	2	0	24	58.3	4	100	1	100	8	75	4	25	1	100	2	100
