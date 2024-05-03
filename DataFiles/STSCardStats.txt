@@ -1,3 +1,4 @@
+Card Name  Act 1 Total  Act 1 Win %  Act 2 Total  Act 2 Win %  Act 3 Total  Act 3 Win %
 Pommel Strike	1734	36.68	745	51.01	394	71.07  
 Shrug It Off	1579	36.73	1136	49.21	731	75.65  
 Armaments	1192	35.99	387	48.84	183	77.6  
