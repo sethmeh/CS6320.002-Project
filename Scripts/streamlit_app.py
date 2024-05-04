@@ -16,7 +16,7 @@ def recognize_events(d):
     i = 0
     for token in d:
         temp_tuple = (token.text.lower(), 'EVENT')
-        if temp_tuple in events:
+        if temp_tuple in model_events:
             # If the token is in events list, set its label to "EVENT"
             d.ents = list(d.ents) + [Span(d, i, i + 1, label="EVENT")]
         i += 1
@@ -28,7 +28,7 @@ def recognize_events(d):
     i = 0
     for token in d:
         temp_tuple = (token.text.lower(), 'CARD')
-        if temp_tuple in cards:
+        if temp_tuple in model_cards:
             # If the token is in cards list, set its label to "CARD"
             d.ents = list(d.ents) + [Span(d, i, i + 1, label="CARD")]
         i += 1
@@ -268,8 +268,8 @@ event_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-P
 event_tagging_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventTagging.txt"
 
 model = Model(card_percentages_file, event_percentages_file, event_tagging_file)
-events = model.events
-cards = model.cards
+model_events = model.events
+model_cards = model.cards
 
 # Add the component to the pipeline
 nlp.add_pipe("recognize_events", before="ner")
