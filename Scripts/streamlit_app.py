@@ -258,6 +258,8 @@ def response_generator(response_model, p):
     for word in generated_response.split():
         yield word + " "
         time.sleep(0.05)
+        
+    return generated_response
 
 
 nlp = spacy.load("en_core_web_sm")
