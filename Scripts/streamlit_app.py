@@ -36,13 +36,14 @@ def recognize_events(d):
 
 
 class Model:
-    def read_file_from_url(self, url):
+    @staticmethod
+    def read_file_from_url(url):
         # Fetch the file content from the URL
-        response = requests.get(url)
+        url_response = requests.get(url)
         # Check if request was successful
-        if response.status_code == 200:
+        if url_response.status_code == 200:
             # Read the content of the file
-            content = response.text
+            content = url_response.text
             # Create a StringIO object to mimic a file object
             file_object = StringIO(content)
             # Read the first row to extract column names
@@ -100,16 +101,15 @@ class Model:
             t = t.replace(card.lower(), card.lower().replace(" ", "_"))
         return t
 
-    def process_text(self, t, nalp):
+    def process_text(self, t, n):
         t = self.preprocess(t)
-        d = nalp(t)
+        d = n(t)
         return d
 
     def compute_choice_bigrams(self):
         articles = ["a", "an", "the"]
         pronouns = ["i", "you", "he", "she", "they", "it", "we"]
         banned_words = articles + pronouns
-        event_choices = self.event_tagging_df.iloc[1:]
         for index, row in self.event_tagging_df.iterrows():
             for column in self.event_tagging_df:
                 val = row[column]
@@ -160,9 +160,9 @@ class Model:
                 if check_word in self.choice_words:
                     index_of_word = self.choice_words.index(check_word)
                     log_prob = math.log(((self.word_counts[i][index_of_word] + 1) / (
-                            self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(
-                        self.word_counts))), math.e)
+                            self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(self.word_counts))), math.e)
                     event_probs[i] += log_prob
+            # noinspection PyTypeChecker
             event_probs[i] = math.e ** event_probs[i]
             if event_probs[i] > max_posterior:
                 max_posterior = event_probs[i]
@@ -185,6 +185,7 @@ class Model:
         while i < len(event_row):
             choice_total = float(event_row.iloc[i])
             choice_percent = float(event_row.iloc[i + 1]) / 100
+            # noinspection PyTypeChecker
             choice_scores[math.floor(i / 2)] = choice_total * choice_percent
             choice_indexes[math.floor(i / 2)] = math.ceil(i / 2)
             i += 2
@@ -202,7 +203,7 @@ class Model:
         response_event_name = self.find_most_likely_event(d)
         response_event_choice = self.make_choice_from_event(response_event_name)
         if not self.small_val_flag:
-            response = random.choice(
+            prompt_response = random.choice(
                 [
                     "For the event " + response_event_name + random.choice(
                         [
@@ -240,19 +241,21 @@ class Model:
                 ]
             )
         else:
-            response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "\nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
-        return response
+            prompt_response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "\nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
+        return prompt_response
 
 
-def response_generator(model, p):
-    doc = model.process_text(p, nlp)
-    response = model.form_response(doc)
-    if not model.small_val_flag:
-        random_num = random.choice([1,2,3,4,5,6])
+def response_generator(response_model, p):
+    doc = response_model.process_text(p, nlp)
+    generated_response = response_model.form_response(doc)
+    if not response_model.small_val_flag:
+        random_num = random.choice([1, 2, 3, 4, 5, 6])
         if random_num == 1:
-            response += "\nIf you think this is about the wrong event consider prompting again with the event name or more information on the choices you have."
-    model.small_val_flag = 0
-    for word in response.split():
+            generated_response += (
+                "\nIf you think this is about the wrong event consider prompting again with the event name or "
+                "more information on the choices you have.")
+    response_model.small_val_flag = 0
+    for word in generated_response.split():
         yield word + " "
         time.sleep(0.05)
 
@@ -270,7 +273,6 @@ cards = model.cards
 # Add the component to the pipeline
 nlp.add_pipe("recognize_events", before="ner")
 nlp.add_pipe("recognize_cards", before='ner')
-
 
 st.title("Slay The Spire Helper")
 
