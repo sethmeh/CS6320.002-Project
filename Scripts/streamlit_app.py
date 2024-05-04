@@ -258,7 +258,7 @@ def response_generator(response_model, p):
     for word in generated_response.split():
         yield word + " "
         time.sleep(0.05)
-        
+
     return generated_response
 
 
@@ -290,9 +290,7 @@ if prompt := st.chat_input("Ask me a question"):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    with st.spinner("Generating response..."):
-        response = response_generator(model, prompt)
-
     with st.chat_message("assistant"):
+        response = st.write_stream(response_generator(model, prompt))
         st.markdown(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
