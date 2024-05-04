@@ -8,7 +8,7 @@ Bonfire Spirits	Starter	Common	Uncommon	Rare	Special	Curse
 The Colosseum	[Fight]	[COWARDICE] Escape.	[VICTORY] A powerful fight with many rewards.
 Cursed Tome	[Leave]	[Take] Obtain the Book. Lose 15 HP.	[Stop] Lose 3 HP.
 Dead Adventurer	0 times: [Search] Find Loot.	1 times: [Search] Find Loot.	2 times: [Search] Find Loot.	3 times: [Search] Find Loot.
-Designer In-Spire	[Punch] Lose 5 HP.	[Adjustments] Lose 50 Gold. Upgrade a card.	[Adjustments] Lose 50 Gold. Upgrade 2 random cards.	[Clean Up] Lose 75 Gold. Remove a card.	[Clean Up] Lose 75 Gold. Transform 2 cards.	[Full Service] Lose 110 Gold. Remove a card and upgrade a random card.
+Designer In-Spire	[Punch] Lose 5 HP.	[Adjustments] Lose 50 Gold. Upgrade a card.	[Clean Up] Lose 75 Gold. Remove a card.	[Full Service] Lose 110 Gold. Remove a card and upgrade a random card.
 Augmenter	[Test J.A.X.] Get JAXXED.	[Become Test Subject] Transform 2 cards.	[Ingest Mutagens] Obtain a special relic.
 Duplicator	[Pray] Duplicate a card in your deck.	[Leave]
 Face Trader	[Touch] Lose 10% HP, gain 50 Gold.	[Trade] 50%: Good Face. 50%: Bad Face.	[Leave]
