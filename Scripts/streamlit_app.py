@@ -287,4 +287,4 @@ if prompt := st.chat_input("Ask me a question"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        response = st.write_stream(response_generator(prompt))
+        response = st.write_stream(response_generator(model, prompt))
