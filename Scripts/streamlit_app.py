@@ -290,4 +290,4 @@ if prompt := st.chat_input("Ask me a question"):
 
     with st.chat_message("assistant"):
         response = st.write_stream(response_generator(model, prompt))
-st.session_state.messages.append({"role": "assistant", "content": response})
+    st.session_state.messages.append({"role": "assistant", "content": response})
