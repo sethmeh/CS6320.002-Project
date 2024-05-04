@@ -241,7 +241,7 @@ class Model:
                 ]
             )
         else:
-            prompt_response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "\nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
+            prompt_response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "  \nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
         return prompt_response
 
 
@@ -252,14 +252,13 @@ def response_generator(response_model, p):
         random_num = random.choice([1, 2, 3, 4, 5, 6])
         if random_num == 1:
             generated_response += (
-                "\nIf you think this is about the wrong event consider prompting again with the event name or "
+                "  \nIf you think this is about the wrong event consider prompting again with the event name or "
                 "more information on the choices you have.")
     response_model.small_val_flag = 0
+
     for word in generated_response.split():
         yield word + " "
         time.sleep(0.05)
-
-    return generated_response
 
 
 nlp = spacy.load("en_core_web_sm")
