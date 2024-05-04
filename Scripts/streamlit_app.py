@@ -1,8 +1,5 @@
-from openai import OpenAI
 import streamlit as st
-import random
 import time
-
 import pandas as pd
 import requests
 from io import StringIO
