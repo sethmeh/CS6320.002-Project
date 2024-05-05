@@ -159,6 +159,11 @@ class Model:
                         en = en.title()
                     event_name += en + " "
                 return event_name[:-1]
+        if card_count >= 3:
+            for token in d:
+                if token.text.lower() == "upgrade":
+                    return "Upgrade Card"
+            return "Card Selection"
         max_posterior = -1
         most_likely_event = None
         max_num_choice_words_in_doc = 0
@@ -182,14 +187,14 @@ class Model:
 
         if max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
             self.small_val_flag = 1
-        if card_count >= 3:
-            return "Card Selection"
         else:
             return most_likely_event
 
     def make_choice_from_event(self, event_name, d):
         if event_name == "Card Selection":
             return self.choose_card(d)
+        elif event_name == "Upgrade Card":
+            return self.choose_upgrade(d)
         event_row = self.event_percentages_df[self.event_percentages_df['Event Name'] == event_name]
         event_row = event_row.iloc[0]
         event_row = event_row.dropna()
@@ -197,7 +202,7 @@ class Model:
         choice_indexes = [0] * math.floor((len(event_row) / 2))
         i = 1
         while i < len(event_row):
-            choice_total = float(event_row.iloc[i])
+            choice_total = float(event_row.iloc[i])**0.2
             choice_percent = float(event_row.iloc[i + 1]) / 100
             # noinspection PyTypeChecker
             choice_scores[math.floor(i / 2)] = choice_total * choice_percent
@@ -216,20 +221,30 @@ class Model:
         for ent in d.ents:
             if ent.label_ == "CARD":
                 current_card_list.append(ent.text.replace('_', ' ').title())
-        card_list_scores = [0] * len(current_card_list)
+        card_list_scores = [0] * (len(current_card_list) + 1)
         i = 0
         for card in current_card_list:
             card_row = self.card_percentages_df[self.card_percentages_df['Card Name'] == card]
-            choice_total = float(card_row.iloc[0, 1])
+            choice_total = float(card_row.iloc[0, 1])**0.2
             choice_percent = float(card_row.iloc[0, 2]) / 100
+            choice_skip_total = float(card_row.iloc[0, 3])**0.2
+            choice_skip_percent = float(card_row.iloc[0, 4]) / 100
             # noinspection PyTypeChecker
-            card_list_scores[i] = choice_total * choice_percent
+            card_list_scores[i] += choice_total * choice_percent
+            for j in range (len(card_list_scores)):
+                if i != j:
+                    card_list_scores[j] += choice_skip_total * choice_skip_percent
             i += 1
 
+        current_card_list.append("Skip")
         norm_card_scores = [float(i) / sum(card_list_scores) for i in card_list_scores]
         final_card = random.choices(current_card_list, weights=norm_card_scores, k=1)[0]
 
         return final_card
+
+
+    def choose_upgrade(self, d):
+
 
     def form_response(self, d):
         response_event_name = self.find_most_likely_event(d)
@@ -300,9 +315,10 @@ def response_generator(response_model, p):
 
 nlp = spacy.load("en_core_web_sm")
 
-card_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStats.txt"
-event_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventStats.txt"
-event_tagging_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventTagging.txt"
+card_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStats.tsv"
+event_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventStats.tsv"
+event_tagging_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventTagging.tsv"
+card_upgrades_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStatsUpgrades.tsv"
 
 model = Model(card_percentages_file, event_percentages_file, event_tagging_file)
 model_events = model.events
