@@ -1,4 +1,4 @@
-Prompt	Expected event Name
+Prompt	Expected Event Name
 how many potions should i buy from the potion seller	The Woman in Blue
 do i transform a card or leave	Transmogrifier
 Hello, do you think it would be better for me to upgrade a card or leave	Upgrade Shrine
