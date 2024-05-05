@@ -151,8 +151,14 @@ class Model:
             if ent.label_ == "CARD":
                 card_count += 1
             elif ent.label_ == "EVENT":
-                event_name = ent.text.replace('_', ' ').title()
-                return event_name
+                event_name = ent.text.replace('_', ' ')
+                event_name_list = event_name.split(" ")
+                event_name = ""
+                for en in event_name_list:
+                    if en != 'of' and en != 'and':
+                        en = en.title()
+                    event_name += en + " "
+                return event_name[:-1]
         max_posterior = -1
         most_likely_event = None
         for i in range(len(event_probs)):
