@@ -5,7 +5,7 @@ Ancient Writing	[Elegance] Remove a card from your deck.	[Simplicity] Upgrade al
 Old Beggar	[Offer Gold] 75 Gold: Remove a card from your deck.	[Leave]
 Big Fish	[Banana] Heal 33% HP.	[Donut] Max HP +5.	[Box] Obtain a Relic. Become Cursed - Regret.
 Bonfire Spirits	Starter	Common	Uncommon	Rare	Special	Curse
-The Colosseum	[Fight]	[COWARDICE] Escape.	[VICTORY] A powerful fight with many rewards.
+The Colosseum	[COWARDICE] Escape.	[VICTORY] A powerful fight with many rewards.
 Cursed Tome	[Leave]	[Take] Obtain the Book. Lose 15 HP.	[Stop] Lose 3 HP.
 Dead Adventurer	0 times: [Search] Find Loot.	1 times: [Search] Find Loot.	2 times: [Search] Find Loot.	3 times: [Search] Find Loot.
 Designer In-Spire	[Punch] Lose 5 HP.	[Adjustments] Lose 50 Gold. Upgrade a card.	[Clean Up] Lose 75 Gold. Remove a card.	[Full Service] Lose 110 Gold. Remove a card and upgrade a random card.
