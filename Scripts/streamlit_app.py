@@ -72,7 +72,6 @@ class Model:
         self.event_tagging_df = self.read_file_from_url(et_file)
         self.card_upgrades_df = self.read_file_from_url(cu_file)
 
-
         self.event_names = self.event_tagging_df.iloc[:, 0].tolist()
         self.events = []
         self.card_names = self.card_percentages_df.iloc[:, 0].tolist()
@@ -235,7 +234,7 @@ class Model:
             choice_skip_percent = float(card_row.iloc[0, 4]) / 100
             # noinspection PyTypeChecker
             card_list_scores[i] += choice_total * choice_percent
-            for j in range (len(card_list_scores)):
+            for j in range(len(card_list_scores)):
                 if i != j:
                     card_list_scores[j] += choice_skip_total * choice_skip_percent
             i += 1
@@ -245,7 +244,6 @@ class Model:
         final_card = random.choices(current_card_list, weights=norm_card_scores, k=1)[0]
 
         return final_card
-
 
     def choose_upgrade(self, d):
         current_card_list = []
