@@ -161,10 +161,13 @@ class Model:
                 return event_name[:-1]
         max_posterior = -1
         most_likely_event = None
+        max_num_choice_words_in_doc = 0
         for i in range(len(event_probs)):
+            current_num_choice_words_in_doc = 0
             for token in d:
                 check_word = token.text.lower()
                 if check_word in self.choice_words:
+                    current_num_choice_words_in_doc += 1
                     index_of_word = self.choice_words.index(check_word)
                     log_prob = math.log(((self.word_counts[i][index_of_word] + 1) / (
                             self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(self.word_counts))), math.e)
@@ -174,8 +177,9 @@ class Model:
             if event_probs[i] > max_posterior:
                 max_posterior = event_probs[i]
                 most_likely_event = self.event_names[i]
+            max_num_choice_words_in_doc = current_num_choice_words_in_doc
 
-        if max_posterior < 5 * 10 ** -15:
+        if max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
             self.small_val_flag = 1
         if card_count >= 3:
             return "card_selection"
