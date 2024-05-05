@@ -19,55 +19,55 @@ Iron Wave	336	26.19
 Wild Strike	301	28.24
 Flex	228	38.6
 Clash	55	10.91
-Feel No Pain  1993  51.93
-Shockwave  1773  51.21
-Dark Embrace  1754  56.1
-Second Wind  1632  52.27
-Battle Trance  1553  47.78
-Power Through  1519  49.57
-Burning Pact  1491  56.61
-Disarm  1489  51.85
-Evolve  1430  51.05
-Whirlwind  1231  36.23
-Bloodletting  1164  52.32
-Flame Barrier  1071  44.72
-Uppercut  1067  43.86
-Spot Weakness  1037  45.13
-Inflame  1005  37.61
-Dropkick  927  44.44
-Seeing Red  905  55.58
-Carnage  803  39.35
-Blood for Blood  767  35.46
-Ghostly Armor  674  41.69
-Hemokinesis  650  30.31
-Rage  624  49.2
-Dual Wield  607  62.11
-Sentinel  526  59.13
-Entrench  521  68.33
-Metallicize  488  41.39
-Pummel  470  45.53
-Reckless Charge  436  46.79
-Rupture  418  40.67
-Intimidate  402  56.72
-Fire Breathing  385  36.62
-Combust  382  34.82
-Sever Soul  330  35.76
-Infernal Blade  283  34.98
-Rampage  256  27.34
-Searing Blow  78  14.1
-Offering  1420  52.39
-Impervious  1189  54.33
-Fiend Fire  1166  53.09
-Feed  1156  51.38
-Reaper  1126  56.84
-Corruption  1125  58.93
-Immolate  906  37.75
-Barricade  829  60.43
-Exhume  809  59.83
-Demon Form  712  49.16
-Limit Break  476  49.58
-Double Tap  462  43.07
-Brutality  411  55.23
-Bludgeon  358  38.27
-Juggernaut  263  47.53
-Berserk  252  44.44
+Feel No Pain	1993	51.93
+Shockwave	1773	51.21
+Dark Embrace	1754	56.1
+Second Wind	1632	52.27
+Battle Trance	1553	47.78
+Power Through	1519	49.57
+Burning Pact	1491	56.61
+Disarm	1489	51.85
+Evolve	1430	51.05
+Whirlwind	1231	36.23
+Bloodletting	1164	52.32
+Flame Barrier	1071	44.72
+Uppercut	1067	43.86
+Spot Weakness	1037	45.13
+Inflame	1005	37.61
+Dropkick	927	44.44
+Seeing Red	905	55.58
+Carnage	803	39.35
+Blood for Blood	767	35.46
+Ghostly Armor	674	41.69
+Hemokinesis	650	30.31
+Rage	624	49.2
+Dual Wield	607	62.11
+Sentinel	526	59.13
+Entrench	521	68.33
+Metallicize	488	41.39
+Pummel	470	45.53
+Reckless Charge	436	46.79
+Rupture	418	40.67
+Intimidate	402	56.72
+Fire Breathing	385	36.62
+Combust	382	34.82
+Sever Soul	330	35.76
+Infernal Blade	283	34.98
+Rampage	256	27.34
+Searing Blow	78	14.1
+Offering	1420	52.39
+Impervious	1189	54.33
+Fiend Fire	1166	53.09
+Feed	1156	51.38
+Reaper	1126	56.84
+Corruption	1125	58.93
+Immolate	906	37.75
+Barricade	829	60.43
+Exhume	809	59.83
+Demon Form	712	49.16
+Limit Break	476	49.58
+Double Tap	462	43.07
+Brutality	411	55.23
+Bludgeon	358	38.27
+Juggernaut	263	47.53
+Berserk	252	44.44
