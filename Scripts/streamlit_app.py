@@ -151,7 +151,8 @@ class Model:
             if ent.label_ == "CARD":
                 card_count += 1
             elif ent.label_ == "EVENT":
-                return ent.text
+                event_name = ent.text.replace('_', ' ').title()
+                return event_name
         max_posterior = -1
         most_likely_event = None
         for i in range(len(event_probs)):
@@ -176,6 +177,8 @@ class Model:
             return most_likely_event
 
     def make_choice_from_event(self, event_name):
+        if event_name == "card_selection":
+            return "shrug_it_off"
         event_row = self.event_percentages_df[self.event_percentages_df['Event Name'] == event_name]
         event_row = event_row.iloc[0]
         event_row = event_row.dropna()
@@ -242,19 +245,13 @@ class Model:
             )
         else:
             prompt_response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "  \nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
+            self.small_val_flag = 0
         return prompt_response
 
 
 def response_generator(response_model, p):
     doc = response_model.process_text(p, nlp)
     generated_response = response_model.form_response(doc)
-    if not response_model.small_val_flag:
-        random_num = random.choice([1, 2, 3, 4, 5, 6])
-        if random_num == 1:
-            generated_response += (
-                "  \nIf you think this is about the wrong event consider prompting again with the event name or "
-                "more information on the choices you have.")
-    response_model.small_val_flag = 0
 
     for word in generated_response.split():
         yield word + " "
@@ -291,5 +288,4 @@ if prompt := st.chat_input("Ask me a question"):
 
     with st.chat_message("assistant"):
         response = st.write_stream(response_generator(model, prompt))
-        st.markdown(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
