@@ -44,7 +44,7 @@ Tomb of Lord Red Mask	[Don the Red Mask] Gain 222 Gold.	[Offer: Gold] Lose all G
 Transmogrifier	[Pray] Transform a card.	[Leave]
 Upgrade Shrine	[Pray] Upgrade a card.	[Leave]
 Vampires(?)	[Accept] Remove all Strikes. Receive 5 Bites. Lose 30% Max HP.	[Lose Blood Vial] Remove all Strikes. Receive 5 Bites.	[Refuse]
-We Meet Again!	[Give Potion] Lose	[Give Gold] Lose	[Give Card] Lose	[Attack]
+We Meet Again!	[Give Potion]	[Give Gold]	[Give Card]	[Attack]
 Wheel of Change	[Prize!] YAY!!!! 100g x Current Act	[Prize!] Obtain a Relic.	[Prize!] Heal to full health.	[Prize?] Curse - Decay.	[Prize!] Remove a card from your deck.	[Prize?] Lose 15% HP.
 Winding Halls	[Embrace Madness] Receive 2 Madness. Lose 18% HP.	[Focus] Become Cursed - Writhe. Heal 20% HP.	[Retrace Your Steps] Lose 5% Max HP.
 World of Goop	[Gather Gold] Gain 75 Gold. Lose 11 HP.	[Leave It] Lose 35-75 Gold.
