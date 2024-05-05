@@ -29,3 +29,39 @@ so i was working on my project and i wasn't really sure what i should do for it 
 flex or rage	Card Selection
 i want to upgrade a card should i upgrade pommel strike or shrug it off	Upgrade Card
 remove a card or upgrade all strikes and defends	Ancient Writing
+forge or rummage	Ominous Forge
+Should i upgrade a card or get a relic and a curse	Ominous Forge
+i don't know what to do at the forge. i really don't want to take a curse but i hear the relic is really good. what should i do?	Ominous Forge
+rob or pay the vagrant for a relic	Pleading Vagrant
+what should i do with the pleading vagrant	Pleading Vagrant
+i don't want to get a curse but i don't have a ton of money either. should i pay the guy or rob him?	Pleading Vagrant
+elegance or simplicity	Ancient Writing
+is 75 gold to remove a card worht it?	Old Beggar
+what should i do with the beggar	Old Beggar
+banana donut or box	Big Fish
+heal max hp or a relic	Big Fish
+do i get a relic and become cursed? or heal	Big Fish
+what kind of card should i give to the bonfire	Bonfire Spirits
+spirits?	Bonfire Spirits
+what to do at a colosseum?	The Colosseum
+escape or fight a powerful fight	The Colosseum
+obtain the book or leave	Cursed Tome
+lose 15hp or leave	Cursed Tome
+do i stop reading 	Cursed Tome
+How many times do i search for loot	Dead Adventurer
+upgrade remove or both	Designer In-Spire
+adjustments or full service	Designer In-Spire
+do i get jaxxed?	Augmenter
+duplicator?	Duplicator
+duplicate or leave	Duplicator
+lose hp and gain 50 gold or get a face	Face Trader
+leave or trade	Face Trader
+touch trade or leave	Face Trader
+what do i do if i am falling	Falling
+gain 5 max hp or become cursed	Forgotten Altar
+do i keep the golden idol or not	Forgotten Altar
+hide smash or outrun	Golden Idol
+lose max hp or take damage	Golden Idol
+do i leave the idol behind?	Golden Idol
+gain gold or remove a card	Wing Statue
+pray or destroy	Wing Statue
