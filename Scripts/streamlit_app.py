@@ -305,7 +305,7 @@ class Model:
                 ]
             )
         elif response_event_choice == "FAILED STATE" or response_event_name is None:
-            return "Sorry I didn't understand that. Please provide more information."
+            return "Sorry I didn't understand that. Please provide more information and keep your responses limited to question about Slay the Spire."
         else:
             prompt_response = random.choice(
                 [
