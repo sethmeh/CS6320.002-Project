@@ -182,13 +182,13 @@ class Model:
         if max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
             self.small_val_flag = 1
         if card_count >= 3:
-            return "card_selection"
+            return "Card Selection"
         else:
             return most_likely_event
 
-    def make_choice_from_event(self, event_name):
-        if event_name == "card_selection":
-            return "shrug_it_off"
+    def make_choice_from_event(self, event_name, d):
+        if event_name == "Card Selection":
+            return self.choose_card(d)
         event_row = self.event_percentages_df[self.event_percentages_df['Event Name'] == event_name]
         event_row = event_row.iloc[0]
         event_row = event_row.dropna()
@@ -212,10 +212,41 @@ class Model:
         print("choice: ", event_choice_row.iloc[choice_index])
         return event_choice_row.iloc[choice_index]
 
+    def choose_card(self, d):
+        current_card_list = []
+        for ent in d.ents:
+            if ent.label_ == "CARD":
+                current_card_list.append(ent.text.replace('_', ' ').title())
+        card_list_scores = [0] * len(current_card_list)
+        i = 0
+        for card in current_card_list:
+            card_row = self.card_percentages_df[self.card_percentages_df['Card Name'] == card]
+            choice_total = float(card_row.iloc[1])
+            choice_percent = float(card_row.iloc[2]) / 100
+            # noinspection PyTypeChecker
+            card_list_scores[i] = choice_total * choice_percent
+            i += 1
+
+        norm_card_scores = [float(i) / sum(card_list_scores) for i in card_list_scores]
+        final_card = random.choices(current_card_list, weights=norm_card_scores, k=1)[0]
+        
+        return final_card
+
     def form_response(self, d):
         response_event_name = self.find_most_likely_event(d)
-        response_event_choice = self.make_choice_from_event(response_event_name)
-        if not self.small_val_flag:
+        response_event_choice = self.make_choice_from_event(response_event_name, d)
+        if response_event_name == "Card Selection":
+            prompt_response = random.choice(
+                [
+                    "The best card to take is " + response_event_choice,
+                    "My suggestion here is " + response_event_choice,
+                    response_event_choice + " is the card I would choose",
+                    "The best choice here is " + response_event_choice,
+                    "My suggestion is to take " + response_event_choice,
+                    "I recommend " + response_event_choice
+                ]
+            )
+        else:
             prompt_response = random.choice(
                 [
                     "For the event " + response_event_name + random.choice(
@@ -253,8 +284,8 @@ class Model:
                     ) + response_event_choice
                 ]
             )
-        else:
-            prompt_response = "I think you are talking about " + response_event_name + " so i will suggest " + response_event_choice + "  \nIf this is not the correct event consider prompting again with the event name or more information on the choices you have."
+        if self.small_val_flag:
+            prompt_response += "  \nI think you are talking about " + response_event_name + ". If this is not the correct event consider prompting again with the event name or more information on the choices you have."
             self.small_val_flag = 0
         return prompt_response
 
