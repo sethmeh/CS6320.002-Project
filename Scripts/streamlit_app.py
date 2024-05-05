@@ -170,7 +170,8 @@ class Model:
                     current_num_choice_words_in_doc += 1
                     index_of_word = self.choice_words.index(check_word)
                     log_prob = math.log(((self.word_counts[i][index_of_word] + 1) / (
-                            self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(self.word_counts))), math.e)
+                            self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(
+                        self.word_counts))), math.e)
                     event_probs[i] += log_prob
             # noinspection PyTypeChecker
             event_probs[i] = math.e ** event_probs[i]
@@ -204,12 +205,10 @@ class Model:
             i += 2
         norm_choice_scores = [float(i) / sum(choice_scores) for i in choice_scores]
         choice_index = random.choices(choice_indexes, weights=norm_choice_scores, k=1)[0]
-        print("Choice Index: ", choice_index)
-        print("Scores: ", norm_choice_scores)
 
         event_choice_row = self.event_tagging_df[self.event_tagging_df['Event Name'] == event_name]
         event_choice_row = event_choice_row.iloc[0]
-        print("choice: ", event_choice_row.iloc[choice_index])
+
         return event_choice_row.iloc[choice_index]
 
     def choose_card(self, d):
@@ -221,15 +220,15 @@ class Model:
         i = 0
         for card in current_card_list:
             card_row = self.card_percentages_df[self.card_percentages_df['Card Name'] == card]
-            choice_total = float(card_row.iloc[1])
-            choice_percent = float(card_row.iloc[2]) / 100
+            choice_total = float(card_row.iloc[0, 1])
+            choice_percent = float(card_row.iloc[0, 2]) / 100
             # noinspection PyTypeChecker
             card_list_scores[i] = choice_total * choice_percent
             i += 1
 
         norm_card_scores = [float(i) / sum(card_list_scores) for i in card_list_scores]
         final_card = random.choices(current_card_list, weights=norm_card_scores, k=1)[0]
-        
+
         return final_card
 
     def form_response(self, d):
@@ -285,7 +284,7 @@ class Model:
                 ]
             )
         if self.small_val_flag:
-            prompt_response += "  \nI think you are talking about " + response_event_name + ". If this is not the correct event consider prompting again with the event name or more information on the choices you have."
+            prompt_response += ". \nI think you are talking about " + response_event_name + ". If this is not the correct event consider prompting again with the event name or more information on the choices you have."
             self.small_val_flag = 0
         return prompt_response
 
