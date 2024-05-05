@@ -244,7 +244,7 @@ class Model:
 
 
     def choose_upgrade(self, d):
-
+        return "Shrug it Off"
 
     def form_response(self, d):
         response_event_name = self.find_most_likely_event(d)
