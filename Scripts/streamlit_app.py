@@ -66,10 +66,12 @@ class Model:
             print("Failed to fetch the file from URL.")
             return None
 
-    def __init__(self, cp_file, ep_file, et_file):
+    def __init__(self, cp_file, ep_file, et_file, cu_file):
         self.card_percentages_df = self.read_file_from_url(cp_file)
         self.event_percentages_df = self.read_file_from_url(ep_file)
         self.event_tagging_df = self.read_file_from_url(et_file)
+        self.card_upgrades_df = self.read_file_from_url(cu_file)
+
 
         self.event_names = self.event_tagging_df.iloc[:, 0].tolist()
         self.events = []
@@ -159,7 +161,7 @@ class Model:
                         en = en.title()
                     event_name += en + " "
                 return event_name[:-1]
-        if card_count >= 3:
+        if card_count >= 2:
             for token in d:
                 if token.text.lower() == "upgrade":
                     return "Upgrade Card"
@@ -195,6 +197,8 @@ class Model:
             return self.choose_card(d)
         elif event_name == "Upgrade Card":
             return self.choose_upgrade(d)
+        elif event_name is None:
+            return "FAILED STATE"
         event_row = self.event_percentages_df[self.event_percentages_df['Event Name'] == event_name]
         event_row = event_row.iloc[0]
         event_row = event_row.dropna()
@@ -244,22 +248,64 @@ class Model:
 
 
     def choose_upgrade(self, d):
-        return "Shrug it Off"
+        current_card_list = []
+        for ent in d.ents:
+            if ent.label_ == "CARD":
+                current_card_list.append(ent.text.replace('_', ' ').title())
+        card_list_scores = [0] * len(current_card_list)
+        i = 0
+        for card in current_card_list:
+            card_row = self.card_upgrades_df[self.card_upgrades_df['Card Name'] == card]
+            nu_total = float(card_row.iloc[0, 1]) ** 0.2
+            nu_percent = float(card_row.iloc[0, 2]) / 100
+            u_total = float(card_row.iloc[0, 3]) ** 0.2
+            u_percent = float(card_row.iloc[0, 4]) / 100
+            card_list_scores[i] += nu_total * nu_percent - u_total * u_percent
+            i += 1
+
+        norm_card_scores = [float(i) / sum(card_list_scores) for i in card_list_scores]
+        final_card = random.choices(current_card_list, weights=norm_card_scores, k=1)[0]
+
+        return final_card
 
     def form_response(self, d):
         response_event_name = self.find_most_likely_event(d)
         response_event_choice = self.make_choice_from_event(response_event_name, d)
         if response_event_name == "Card Selection":
+            if response_event_choice == "Skip":
+                prompt_response = random.choice(
+                    [
+                        "Here I would skip.",
+                        "In this case I would skip.",
+                        "Do not take any of these cards.",
+                        "Skip all of those.",
+                        "I recommend you skip these cards."
+                    ]
+                )
+            else:
+                prompt_response = random.choice(
+                    [
+                        "The best card to take is " + response_event_choice,
+                        "My suggestion here is " + response_event_choice,
+                        response_event_choice + " is the card I would choose",
+                        "The best choice here is " + response_event_choice,
+                        "My suggestion is to take " + response_event_choice,
+                        "I recommend " + response_event_choice
+                    ]
+                )
+        elif response_event_name == "Upgrade Card":
             prompt_response = random.choice(
                 [
-                    "The best card to take is " + response_event_choice,
+                    "The best card to upgrade is " + response_event_choice,
                     "My suggestion here is " + response_event_choice,
-                    response_event_choice + " is the card I would choose",
+                    response_event_choice + " is the card I would upgrade",
                     "The best choice here is " + response_event_choice,
-                    "My suggestion is to take " + response_event_choice,
+                    "My suggestion is to upgrade " + response_event_choice,
                     "I recommend " + response_event_choice
                 ]
             )
+        elif response_event_choice == "FAILED STATE" or response_event_name is None:
+            return "Sorry I didn't understand that. Please provide more information."
         else:
             prompt_response = random.choice(
                 [
@@ -315,12 +361,12 @@ def response_generator(response_model, p):
 
 nlp = spacy.load("en_core_web_sm")
 
-card_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStats.tsv"
-event_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventStats.tsv"
-event_tagging_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventTagging.tsv"
-card_upgrades_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStatsUpgrades.tsv"
+card_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStats.txt"
+event_percentages_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventStats.txt"
+event_tagging_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSEventTagging.txt"
+card_upgrades_file = "https://raw.githubusercontent.com/sethmeh/CS6320.002-Project/main/DataFiles/STSCardStatsUpgrades.txt"
 
-model = Model(card_percentages_file, event_percentages_file, event_tagging_file)
+model = Model(card_percentages_file, event_percentages_file, event_tagging_file, card_upgrades_file)
 model_events = model.events
 model_cards = model.cards
 
