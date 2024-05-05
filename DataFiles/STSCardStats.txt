@@ -1,4 +1,4 @@
-Card Name	Runs	WinRate
+Card Name    Runs    WinRate
 Shrug It Off	2689	44.18
 Pommel Strike	2403	42.86
 Armaments	1897	41.96
