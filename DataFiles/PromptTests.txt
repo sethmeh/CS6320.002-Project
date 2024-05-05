@@ -1,0 +1,31 @@
+Prompt	Expected event Name
+how many potions should i buy from the potion seller	The Woman in Blue
+do i transform a card or leave	Transmogrifier
+Hello, do you think it would be better for me to upgrade a card or leave	Upgrade Shrine
+do i refuse the vampires?	Vampires(?)
+should i lose a potion, gold or give away shrug it off	We Meet Again!
+what do i do at the winding halls	Winding Halls
+So i'm really confused, i'm looking at some goop and i don't really know what to do. would it be better to take the gold or should i just cut my losses and lose the gold. what do you think	World of Goop
+how do i deal with cleric	The Cleric
+hi i only have 80 gold and i don't know if i should be 50 gold on the murderer or if i should bet 50 gold on the owner. if i bet it on the murderer i will only win 100 so i won't make as much money as if i bet on the owner who gives 250 gold	The Joust
+upgrade 2 cards or leave	Shining Light
+how many colorless cards should i take. I don't want to lose hp	Sensory Stone
+how many times should i reach inside for a relic	Scrap Ooze
+do i fight the spheres	Mysterious Sphere
+Should i anger the mushrooms	Mushrooms
+I am being attacked by some bandits. i have 20 hp so i'm worried i'll die if i fight them but i have 600 gold. do i pay them all my gold or fight.	Masked Bandits
+remove transform or upgrade a card	Living Wall
+DO I AGREE OR DISAGREE WITH THE SERPENT	The Ssssserpent
+do i take regret or 50 gold	Golden Shrine
+Should i lose shrug it off, strike, or corruption	Falling
+transform 2 cards or get a relic	Augmenter
+dead adventurer	Dead Adventurer
+how come	None
+cowardice or victory	The Colosseum
+fdkasljk dsfds	None
+blob or glob	None
+jibberish	None
+so i was working on my project and i wasn't really sure what i should do for it because i'm not really that passionate about anything. do you have any suggestions for what I could do for my project?	None
+flex or rage	Card Selection
+i want to upgrade a card should i upgrade pommel strike or shrug it off	Upgrade Card
+remove a card or upgrade all strikes and defends	Ancient Writing
