@@ -12,4 +12,4 @@ Data for the project comes from the [SpireStars](https://spirestars.web.app/) we
 
 [![Watch the video](https://youtu.be/LfWV8oKEz4M/maxresdefault.jpg)](https://youtu.be/LfWV8oKEz4M)
 
-<video src='https://youtu.be/LfWV8oKEz4M' width=180/>
+<video src=https://youtu.be/LfWV8oKEz4M width=180/>
