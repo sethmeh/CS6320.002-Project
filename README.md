@@ -11,3 +11,5 @@ Data for the project comes from the [SpireStars](https://spirestars.web.app/) we
 ## Video Demo
 
 [![Watch the video](https://youtu.be/LfWV8oKEz4M/maxresdefault.jpg)](https://youtu.be/LfWV8oKEz4M)
+
+<video src='https://youtu.be/LfWV8oKEz4M' width=180/>
