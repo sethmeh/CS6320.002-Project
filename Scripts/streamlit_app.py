@@ -9,7 +9,6 @@ from spacy.language import Language
 import re
 import math
 import random
-import matplotlib.pyplot as plt
 
 
 @Language.component("recognize_events")
