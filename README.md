@@ -12,9 +12,3 @@ Data for the project comes from the [SpireStars](https://spirestars.web.app/) we
 
 video embed
 
-## References
-
-1. 
-2. 
-3. 
-
