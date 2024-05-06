@@ -231,7 +231,7 @@ class Model:
             card_row = self.card_percentages_df[self.card_percentages_df['Card Name'] == card]
             choice_total = float(card_row.iloc[0, 1])
             choice_percent = float(card_row.iloc[0, 2]) / 100
-            c#hoice_skip_total = float(card_row.iloc[0, 3])**0.05
+            #choice_skip_total = float(card_row.iloc[0, 3])**0.05
             choice_skip_percent = float(card_row.iloc[0, 4]) / 100
             # noinspection PyTypeChecker
             card_list_scores[i] += choice_percent
