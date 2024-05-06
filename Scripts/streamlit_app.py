@@ -239,7 +239,7 @@ class Model:
                 card_list_scores[i] *= .05
             for j in range(len(card_list_scores)):
                 if i != j:
-                    card_list_scores[j] += choice_skip_percent
+                    card_list_scores[j] += choice_skip_percent*0.25
             i += 1
 
         current_card_list.append("Skip")
