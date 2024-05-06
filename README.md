@@ -10,6 +10,5 @@ Data for the project comes from the [SpireStars](https://spirestars.web.app/) we
 
 ## Video Demo
 
-[![Watch the video](https://youtu.be/LfWV8oKEz4M/maxresdefault.jpg)](https://youtu.be/LfWV8oKEz4M)
+[![Watch Here](https://img.youtube.com/vi/LfWV8oKEz4M/0.jpg)](https://www.youtube.com/watch?v=LfWV8oKEz4M)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LfWV8oKEz4M?si=uJmIyX4PF4cEzrB_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
