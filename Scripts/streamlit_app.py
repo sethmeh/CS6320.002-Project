@@ -185,8 +185,9 @@ class Model:
                 max_posterior = event_probs[i]
                 most_likely_event = self.event_names[i]
             max_num_choice_words_in_doc = current_num_choice_words_in_doc
-
-        if max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
+        if max_posterior <= 0:
+            return None
+        elif max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
             self.small_val_flag = 1
         return most_likely_event
 
