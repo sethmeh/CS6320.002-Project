@@ -9,6 +9,7 @@ from spacy.language import Language
 import re
 import math
 import random
+import matplotlib.pyplot as plt
 
 
 @Language.component("recognize_events")
@@ -188,8 +189,7 @@ class Model:
 
         if max_posterior < 5 * 10 ** -15 or max_num_choice_words_in_doc < 3:
             self.small_val_flag = 1
-        else:
-            return most_likely_event
+        return most_likely_event
 
     def make_choice_from_event(self, event_name, d):
         if event_name == "Card Selection":
@@ -389,3 +389,6 @@ if prompt := st.chat_input("Ask me a question"):
     with st.chat_message("assistant"):
         response = st.write_stream(response_generator(model, prompt))
         st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+
