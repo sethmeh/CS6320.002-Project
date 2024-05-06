@@ -229,15 +229,17 @@ class Model:
         i = 0
         for card in current_card_list:
             card_row = self.card_percentages_df[self.card_percentages_df['Card Name'] == card]
-            choice_total = float(card_row.iloc[0, 1])**0.2
+            choice_total = float(card_row.iloc[0, 1])
             choice_percent = float(card_row.iloc[0, 2]) / 100
-            choice_skip_total = float(card_row.iloc[0, 3])**0.2
+            c#hoice_skip_total = float(card_row.iloc[0, 3])**0.05
             choice_skip_percent = float(card_row.iloc[0, 4]) / 100
             # noinspection PyTypeChecker
-            card_list_scores[i] += choice_total * choice_percent
+            card_list_scores[i] += choice_percent
+            if choice_total < 500:
+                card_list_scores[i] *= .05
             for j in range(len(card_list_scores)):
                 if i != j:
-                    card_list_scores[j] += choice_skip_total * choice_skip_percent
+                    card_list_scores[j] += choice_skip_percent
             i += 1
 
         current_card_list.append("Skip")
