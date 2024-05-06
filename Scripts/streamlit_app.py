@@ -179,7 +179,7 @@ class Model:
                             self.choice_words_occurrences[index_of_word] + self.word_counts_per_event[i] + len(
                         self.word_counts))), math.e)
                     event_probs[i] += log_prob
-            if event_probs[i] > 0:
+            if event_probs[i] != 0:
                 # noinspection PyTypeChecker
                 event_probs[i] = math.e ** event_probs[i]
             if event_probs[i] > max_posterior:
